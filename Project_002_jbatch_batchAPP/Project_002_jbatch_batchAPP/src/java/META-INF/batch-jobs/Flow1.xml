@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<job version="1.0" restartable="false" id="_145451904285721" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/jobXML_1_0.xsd" xmlns="http://xmlns.jcp.org/xml/ns/javaee" >
+    <step allow-start-if-complete="false" next="F1_F1" id="F1_B1">
+        <batchlet ref="F1_Batchlet1"/>
+    </step>
+    <flow next="F1_B2" id="F1_F1"/>
+    <step allow-start-if-complete="false" id="F1_B2">
+        <batchlet ref="F1_Batchlet2"/>
+    </step>
+</job>

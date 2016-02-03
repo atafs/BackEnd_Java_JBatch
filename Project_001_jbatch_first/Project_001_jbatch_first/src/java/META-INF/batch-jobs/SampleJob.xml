@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<job version="1.0" restartable="false" id="job1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/jobXML_1_0.xsd" xmlns="http://xmlns.jcp.org/xml/ns/javaee" >
+    <step allow-start-if-complete="false" next="batch2" id="batch1">
+        <batchlet ref="Batch1"/>
+    </step>
+    <step allow-start-if-complete="false" next="chunk1" id="batch2">
+        <batchlet ref="Batch2"/>
+    </step>
+    <step allow-start-if-complete="false" next="_1454518349878" id="chunk1">
+        <chunk>
+            <reader ref="ChunkReader1"/>
+            <processor ref="ChunkProcessor1"/>
+            <writer ref="ChunkWriter1"/>
+        </chunk>
+    </step>
+    <decision ref="Decision_1454518349878" id="_1454518349878">
+        <next to="batch3"/>
+        <next to="chunk2"/>
+    </decision>
+    <step allow-start-if-complete="false" id="batch3">
+        <batchlet ref="Batch3"/>
+    </step>
+    <step allow-start-if-complete="false" id="chunk2">
+        <chunk>
+            <reader ref="ChunkReader2"/>
+            <processor ref="ChunkProcessor2 "/>
+            <writer ref="ChunkWriter2"/>
+        </chunk>
+    </step>
+</job>
